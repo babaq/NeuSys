@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="93c96560-792e-4edf-9f1e-9a560238ad61" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://stimulator-pc:8081/ExServer/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="171cc1b2-3696-43e2-b410-0c51e82242fd" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5cef08f1-a2ce-4b1b-a3a0-d659b85b4af8" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="6401673c-0f28-4da9-959d-960ee8f73966" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="df81edd7-4a94-46b7-aa46-b378234cc100" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+    <MetadataFile FileName="StiLib.Core.xsd" MetadataType="Schema" ID="923b760e-a4b1-4f35-842f-0d821c070699" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+    <MetadataFile FileName="Microsoft.Xna.Framework.Graphics.xsd" MetadataType="Schema" ID="568c7f58-44c0-4235-90d4-25fa189330ba" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+    <MetadataFile FileName="StiLib.Vision.xsd" MetadataType="Schema" ID="237dbb06-5f06-48f0-b456-4df2b6b63e60" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+    <MetadataFile FileName="Microsoft.Xna.Framework.xsd" MetadataType="Schema" ID="34a6662c-668c-41a3-92f7-afe4e963b6c7" SourceId="1" SourceUrl="net.tcp://stimulator-pc:8081/ExServer/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

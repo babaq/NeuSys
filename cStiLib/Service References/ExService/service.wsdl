@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="MyEx" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IExService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/StiLib.Core" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Microsoft.Xna.Framework.Graphics" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/StiLib.Vision" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Microsoft.Xna.Framework" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExService_Invoke_InputMessage">
+    <wsdl:part name="parameters" element="tns:Invoke" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Invoke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InvokeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_InvokeScript_InputMessage">
+    <wsdl:part name="parameters" element="tns:InvokeScript" />
+  </wsdl:message>
+  <wsdl:message name="IExService_InvokeScript_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InvokeScriptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEx" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Terminate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Terminate" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Terminate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_get_RunStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_RunStop" />
+  </wsdl:message>
+  <wsdl:message name="IExService_get_RunStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_RunStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_set_RunStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:set_RunStop" />
+  </wsdl:message>
+  <wsdl:message name="IExService_set_RunStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:set_RunStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Subscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetExType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExType" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetExType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Set_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Set_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetMany_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMany" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetMany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetManyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="IExService_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetMany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMany" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetMany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetExDesign_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetExDesign" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetExDesign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetExDesignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetExDesign_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExDesign" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetExDesign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExDesignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetBar_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetBar" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetBar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetBarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetBar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBar" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetBar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetGrating_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetGrating" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetGrating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetGratingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetGrating_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGrating" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetGrating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGratingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetPrimitive_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPrimitive" />
+  </wsdl:message>
+  <wsdl:message name="IExService_SetPrimitive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPrimitiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetPrimitive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrimitive" />
+  </wsdl:message>
+  <wsdl:message name="IExService_GetPrimitive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrimitiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_OnRunStop_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnRunStop" />
+  </wsdl:message>
+  <wsdl:message name="IExService_OnRunStop_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnRunStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExService_OnServiceDispose_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnServiceDispose" />
+  </wsdl:message>
+  <wsdl:message name="IExService_OnServiceDispose_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnServiceDisposeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IExService">
+    <wsdl:operation name="Invoke">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/Invoke" message="tns:IExService_Invoke_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/InvokeResponse" message="tns:IExService_Invoke_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InvokeScript">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/InvokeScript" message="tns:IExService_InvokeScript_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/InvokeScriptResponse" message="tns:IExService_InvokeScript_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEx">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/GetEx" message="tns:IExService_GetEx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetExResponse" message="tns:IExService_GetEx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Terminate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/Terminate" message="tns:IExService_Terminate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/TerminateResponse" message="tns:IExService_Terminate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_RunStop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/get_RunStop" message="tns:IExService_get_RunStop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/get_RunStopResponse" message="tns:IExService_get_RunStop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="set_RunStop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/set_RunStop" message="tns:IExService_set_RunStop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/set_RunStopResponse" message="tns:IExService_set_RunStop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/Subscribe" message="tns:IExService_Subscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/SubscribeResponse" message="tns:IExService_Subscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/GetExType" message="tns:IExService_GetExType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetExTypeResponse" message="tns:IExService_GetExType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/Set" message="tns:IExService_Set_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/SetResponse" message="tns:IExService_Set_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/SetMany" message="tns:IExService_SetMany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/SetManyResponse" message="tns:IExService_SetMany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/Get" message="tns:IExService_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetResponse" message="tns:IExService_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/GetMany" message="tns:IExService_GetMany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetManyResponse" message="tns:IExService_GetMany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetExDesign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/SetExDesign" message="tns:IExService_SetExDesign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/SetExDesignResponse" message="tns:IExService_SetExDesign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExDesign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/GetExDesign" message="tns:IExService_GetExDesign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetExDesignResponse" message="tns:IExService_GetExDesign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetBar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/SetBar" message="tns:IExService_SetBar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/SetBarResponse" message="tns:IExService_SetBar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/GetBar" message="tns:IExService_GetBar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetBarResponse" message="tns:IExService_GetBar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGrating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/SetGrating" message="tns:IExService_SetGrating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/SetGratingResponse" message="tns:IExService_SetGrating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGrating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/GetGrating" message="tns:IExService_GetGrating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetGratingResponse" message="tns:IExService_GetGrating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimitive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/SetPrimitive" message="tns:IExService_SetPrimitive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/SetPrimitiveResponse" message="tns:IExService_SetPrimitive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimitive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/GetPrimitive" message="tns:IExService_GetPrimitive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/GetPrimitiveResponse" message="tns:IExService_GetPrimitive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnRunStop">
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/OnRunStop" message="tns:IExService_OnRunStop_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/OnRunStopResponse" message="tns:IExService_OnRunStop_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnServiceDispose">
+      <wsdl:output wsaw:Action="http://tempuri.org/IExService/OnServiceDispose" message="tns:IExService_OnServiceDispose_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IExService/OnServiceDisposeResponse" message="tns:IExService_OnServiceDispose_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IExService" type="tns:IExService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IExService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Invoke">
+      <soap12:operation soapAction="http://tempuri.org/IExService/Invoke" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvokeScript">
+      <soap12:operation soapAction="http://tempuri.org/IExService/InvokeScript" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEx">
+      <soap12:operation soapAction="http://tempuri.org/IExService/GetEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Terminate">
+      <soap12:operation soapAction="http://tempuri.org/IExService/Terminate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_RunStop">
+      <soap12:operation soapAction="http://tempuri.org/IExService/get_RunStop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_RunStop">
+      <soap12:operation soapAction="http://tempuri.org/IExService/set_RunStop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <soap12:operation soapAction="http://tempuri.org/IExService/Subscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExType">
+      <soap12:operation soapAction="http://tempuri.org/IExService/GetExType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set">
+      <soap12:operation soapAction="http://tempuri.org/IExService/Set" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMany">
+      <soap12:operation soapAction="http://tempuri.org/IExService/SetMany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap12:operation soapAction="http://tempuri.org/IExService/Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMany">
+      <soap12:operation soapAction="http://tempuri.org/IExService/GetMany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetExDesign">
+      <soap12:operation soapAction="http://tempuri.org/IExService/SetExDesign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExDesign">
+      <soap12:operation soapAction="http://tempuri.org/IExService/GetExDesign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBar">
+      <soap12:operation soapAction="http://tempuri.org/IExService/SetBar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBar">
+      <soap12:operation soapAction="http://tempuri.org/IExService/GetBar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGrating">
+      <soap12:operation soapAction="http://tempuri.org/IExService/SetGrating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGrating">
+      <soap12:operation soapAction="http://tempuri.org/IExService/GetGrating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimitive">
+      <soap12:operation soapAction="http://tempuri.org/IExService/SetPrimitive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimitive">
+      <soap12:operation soapAction="http://tempuri.org/IExService/GetPrimitive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnRunStop">
+      <soap12:operation soapAction="http://tempuri.org/IExService/OnRunStop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnServiceDispose">
+      <soap12:operation soapAction="http://tempuri.org/IExService/OnServiceDispose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyEx">
+    <wsdl:port name="NetTcpBinding_IExService" binding="tns:NetTcpBinding_IExService">
+      <soap12:address location="net.tcp://stimulator-pc:8081/ExServer" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://stimulator-pc:8081/ExServer</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
