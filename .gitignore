@@ -1,5 +1,3 @@
-bin
-obj
 *.ini
-*.user
-_ReSharper.*
+obj
+bin
